@@ -1,30 +1,21 @@
-import java.util.Locale;
-
 public class Main {
 
 	public static void main(String[] args) {
 		
-		String productOne = "Computer";
-		String productTwo = "Office Desk";
+		int halfArea;
+		double superiorBase, inferiorBase, height, area;
+		superiorBase = 6.0;
+		inferiorBase = 8.0;
+		height = 5.0;
+		area = (superiorBase + inferiorBase) / 2.0 * height;
 		
-		int age = 30;
-		int code = 5290;
-		char gender = 'M';
+		System.out.println("Trapeze Area");
+		System.out.println("Superior Base:\t" + superiorBase);
+		System.out.println("Inferior Base:\t" + inferiorBase);
+		System.out.println("Height:\t\t" + height);
+		System.out.println("Area:\t\t" + area);
 		
-		double priceOne = 2100.0;
-		double priceTwo = 650.50;
-		double measure = 53.234567;
-		
-		System.out.println("Products:");
-		System.out.printf("%s, which price is $%.2f\n", productOne, priceOne);
-		System.out.printf("%s, which price is $%.2f\n\n", productTwo, priceTwo);
-		
-		System.out.printf("Record: %d years old, code %d and gender: %c\n\n", age, code, gender);
-		
-		System.out.printf("Measure with eight decimal places: %.8f\n", measure);
-		System.out.printf("Measure with three decimal places: %.3f\n", measure);
-		
-		Locale.setDefault(Locale.US);
-		System.out.printf("Measure with US decimal point: %.3f\n", measure);
+		halfArea = (int) area / 2;
+		System.out.println("Half Of Area:\t" + halfArea);
 	}
 }
