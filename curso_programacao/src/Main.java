@@ -4,21 +4,27 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		int valueOne = 32;
-		double valueTwo = 10.35784;
+		String productOne = "Computer";
+		String productTwo = "Office Desk";
 		
-		String name = "Lemmy";
-		int age = 70;
-		double earnings = 4000.0;
+		int age = 30;
+		int code = 5290;
+		char gender = 'M';
 		
-		System.out.println("Hello World!");
-		System.out.println("Integer: " + valueOne);
-		System.out.println("Double: " + valueTwo);
-		System.out.printf("Double (Precision 2): %.2f%n", valueTwo);
-		System.out.printf("Double (Precision 4): %.4f\n", valueTwo);
+		double priceOne = 2100.0;
+		double priceTwo = 650.50;
+		double measure = 53.234567;
+		
+		System.out.println("Products:");
+		System.out.printf("%s, which price is $%.2f\n", productOne, priceOne);
+		System.out.printf("%s, which price is $%.2f\n\n", productTwo, priceTwo);
+		
+		System.out.printf("Record: %d years old, code %d and gender: %c\n\n", age, code, gender);
+		
+		System.out.printf("Measure with eight decimal places: %.8f\n", measure);
+		System.out.printf("Measure with three decimal places: %.3f\n", measure);
 		
 		Locale.setDefault(Locale.US);
-		System.out.printf("Double with US Locale: %.4f%n", valueTwo);
-		System.out.printf("%s is %d and earns $%.2f.", name, age, earnings);
+		System.out.printf("Measure with US decimal point: %.3f\n", measure);
 	}
 }
