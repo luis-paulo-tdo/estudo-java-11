@@ -5,27 +5,23 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		Locale.setDefault(Locale.US);
+		System.out.println("Type a chapter and a text with three paragraphs:");
+		int chapter;
+		String paragraphOne, paragraphTwo, paragraphThree;
 		Scanner scanner = new Scanner(System.in);
-		String inputText;
-		int inputInt;
-		char inputChar;
-		double inputDouble;
 		
+		chapter = scanner.nextInt();
+		scanner.nextLine();
 		
-		System.out.println("Type some Inputs");
-		System.out.println("Order: Start Text, Integer, Double and Final Text");
+		paragraphOne = scanner.nextLine();
+		paragraphTwo = scanner.nextLine();
+		paragraphThree = scanner.nextLine();
 		
-		inputText = scanner.next();
-		inputInt = scanner.nextInt();
-		inputDouble = scanner.nextDouble();
-		inputChar = scanner.next().charAt(0);
-		
-		System.out.printf("\n");
-		System.out.println("Start Text:\t\t\t" + inputText);
-		System.out.println("Integer:\t\t\t" + inputInt);
-		System.out.println("Double:\t\t\t\t" + inputDouble);
-		System.out.println("End Text's First Character:\t" + inputChar);
+		System.out.println();
+		System.out.printf("Chapter %d:\n", chapter);
+		System.out.println(paragraphOne);
+		System.out.println(paragraphTwo);
+		System.out.println(paragraphThree);
 		scanner.close();
 	}
 }
