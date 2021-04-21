@@ -5,23 +5,39 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		System.out.println("Type a chapter and a text with three paragraphs:");
-		int chapter;
-		String paragraphOne, paragraphTwo, paragraphThree;
-		Scanner scanner = new Scanner(System.in);
+		double valueOne = 3.0;
+		double valueTwo = 4.0;
+		double valueThree = -5.0;
+		double resultOne, resultTwo, resultThree;
 		
-		chapter = scanner.nextInt();
-		scanner.nextLine();
-		
-		paragraphOne = scanner.nextLine();
-		paragraphTwo = scanner.nextLine();
-		paragraphThree = scanner.nextLine();
-		
+		System.out.println("VALUES");
+		System.out.println("One:\t" + valueOne);
+		System.out.println("Two:\t" + valueTwo);
+		System.out.println("Three:\t" + valueThree);
 		System.out.println();
-		System.out.printf("Chapter %d:\n", chapter);
-		System.out.println(paragraphOne);
-		System.out.println(paragraphTwo);
-		System.out.println(paragraphThree);
-		scanner.close();
+		
+		resultOne = Math.sqrt(valueOne);
+		resultTwo = Math.sqrt(valueTwo);
+		resultThree = Math.sqrt(25.0);
+		System.out.println("SQUARE ROOTS");
+		System.out.println("One:\t" + resultOne);
+		System.out.println("Two:\t" + resultTwo);
+		System.out.println("25.0:\t" + resultThree);
+		System.out.println();
+		
+		resultOne = Math.pow(valueOne, valueTwo);
+		resultTwo = Math.pow(valueOne, 2.0);
+		resultThree = Math.pow(5.0, 2.0);
+		System.out.println("SQUARE ROOTS");
+		System.out.println("One of Two:\t" + resultOne);
+		System.out.println("Two of 2.0:\t" + resultTwo);
+		System.out.println("5.0 of 2.0:\t" + resultThree);
+		System.out.println();
+		
+		resultTwo = Math.abs(valueTwo);
+		resultThree = Math.abs(valueThree);
+		System.out.println("ABSOLUTES");
+		System.out.println("Two:\t" + resultTwo);
+		System.out.println("Three:\t" + resultThree);
 	}
 }
