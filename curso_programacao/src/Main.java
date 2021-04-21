@@ -1,21 +1,31 @@
+import java.util.Locale;
+import java.util.Scanner;
+
 public class Main {
 
 	public static void main(String[] args) {
 		
-		int halfArea;
-		double superiorBase, inferiorBase, height, area;
-		superiorBase = 6.0;
-		inferiorBase = 8.0;
-		height = 5.0;
-		area = (superiorBase + inferiorBase) / 2.0 * height;
+		Locale.setDefault(Locale.US);
+		Scanner scanner = new Scanner(System.in);
+		String inputText;
+		int inputInt;
+		char inputChar;
+		double inputDouble;
 		
-		System.out.println("Trapeze Area");
-		System.out.println("Superior Base:\t" + superiorBase);
-		System.out.println("Inferior Base:\t" + inferiorBase);
-		System.out.println("Height:\t\t" + height);
-		System.out.println("Area:\t\t" + area);
 		
-		halfArea = (int) area / 2;
-		System.out.println("Half Of Area:\t" + halfArea);
+		System.out.println("Type some Inputs");
+		System.out.println("Order: Start Text, Integer, Double and Final Text");
+		
+		inputText = scanner.next();
+		inputInt = scanner.nextInt();
+		inputDouble = scanner.nextDouble();
+		inputChar = scanner.next().charAt(0);
+		
+		System.out.printf("\n");
+		System.out.println("Start Text:\t\t\t" + inputText);
+		System.out.println("Integer:\t\t\t" + inputInt);
+		System.out.println("Double:\t\t\t\t" + inputDouble);
+		System.out.println("End Text's First Character:\t" + inputChar);
+		scanner.close();
 	}
 }
