@@ -7,20 +7,20 @@ public class Main {
 		
 		Locale.setDefault(Locale.US);
 		Scanner scanner = new Scanner(System.in);
-		int input, sum;
+		int quantity, sum;
 		
-		System.out.println("Sum Calc Application");
-		System.out.println("========");
-		System.out.println("1) Enter a sequence of numbers to calculate the sum");
-		System.out.println("2) Enter 0 when you finish");
+		System.out.println("Sum Calc Application (For)");
+		System.out.println("========================================================");
+		System.out.println("Enter the numbers quantity you want to calculate the sum");
 		System.out.print("> ");
-		input = scanner.nextInt();
-		sum = input;
+		quantity = scanner.nextInt();
+		sum = 0;
 		
-		while (input != 0) {
+		System.out.println("Enter the sequence of " + quantity + " numbers");
+		for (int index = 0; index < quantity; index++) {
 			System.out.print("> ");
-			input = scanner.nextInt();
-			sum += input; 
+			int input = scanner.nextInt();
+			sum += input;
 		}
 		
 		System.out.println("Sum: " + sum);
