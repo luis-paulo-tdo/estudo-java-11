@@ -8,39 +8,15 @@ public class Main {
 		Locale.setDefault(Locale.US);
 		Scanner scanner = new Scanner(System.in);
 		
-		System.out.println("What day is today?");
+		System.out.println("Enter Purchase Price");
 		System.out.print("> ");
-		int dayNumber = scanner.nextInt();
-		String dayWeek;
+		double priceInput = scanner.nextDouble();
+		double price = priceInput > 20.0 ? priceInput * 0.05 : priceInput * 0.1	;
 		
-		switch (dayNumber) {
-		case 1:
-			dayWeek = "Sunday";
-			break;
-		case 2:
-			dayWeek = "Monday";
-			break;
-		case 3:
-			dayWeek = "Tuesday";
-			break;
-		case 4:
-			dayWeek = "Wednesday";
-			break;
-		case 5:
-			dayWeek = "Thursday";
-			break;
-		case 6:
-			dayWeek = "Friday";
-			break;
-		case 7:
-			dayWeek = "Saturday";
-			break;
-		default:
-			dayWeek = "Invalid";
-			break;
+		if (priceInput > 20.0) {
+			System.out.println("Discount applied!");
 		}
-		
-		System.out.println("Day of Week: " + dayWeek);
+		System.out.printf("Price: $%.2f", price);
 		scanner.close();
 	}
 }
