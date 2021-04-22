@@ -1,41 +1,44 @@
+import java.util.Scanner;
+
 public class Main {
 
 	public static void main(String[] args) {
 		
-		String textOriginal = "abcde FGHIJ ABC abc DEFG     ";
-		String textLower = textOriginal.toLowerCase();
-		String textUpper = textOriginal.toUpperCase();
-		String textTrimmed = textOriginal.trim();
+		Scanner scanner = new Scanner(System.in);
+		int numberOne, numberTwo, numberThree, higher;
 		
-		String textSubstringOne = textOriginal.substring(2);
-		String textSubstringTwo = textOriginal.substring(2, 9);
+		System.out.println("Greater Than Three");
+		System.out.println("===================");
+		System.out.println("Enter three numbers");
 		
-		String textReplacedOne = textOriginal.replace('a', 'x');
-		String textReplacedTwo = textOriginal.replace("abc", "xy");
+		System.out.print("> ");
+		numberOne = scanner.nextInt();
 		
-		int textIndex = textOriginal.indexOf("bc");
-		int textLastIndex = textOriginal.lastIndexOf("bc");
-		String[] textVector = textOriginal.split("bc");
+		System.out.print("> ");
+		numberTwo = scanner.nextInt();
 		
-		System.out.println("String Functions");
-		System.out.println("==================================================");
-		System.out.println("Original Value:\t\t[" + textOriginal + "]\n");
+		System.out.print("> ");
+		numberThree = scanner.nextInt();
 		
-		System.out.println("Format toLowerCase:\t[" + textLower + "]");
-		System.out.println("Format toUpperCase:\t[" + textUpper + "]");
-		System.out.println("Format trim:\t\t[" + textTrimmed + "]\n");
+		higher = max(numberOne, numberTwo, numberThree);
+		showResult(higher);
 		
-		System.out.println("Cut substring(2):\t[" + textSubstringOne + "]");
-		System.out.println("Cut substring(2, 9):\t[" + textSubstringTwo + "]\n");
-		
-		System.out.println("Replace a to x:\t\t[" + textReplacedOne + "]");
-		System.out.println("Replace abc to xy:\t[" + textReplacedTwo + "]\n");
-		
-		System.out.println("Index of bc:\t\t[" + textIndex + "]");
-		System.out.println("Last Index of bc:\t[" + textLastIndex + "]\n");
-		
-		System.out.println("Vector Index 0:\t\t[" + textVector[0] + "]");
-		System.out.println("Vector Index 1:\t\t[" + textVector[1] + "]");
-		System.out.println("Vector Index 2:\t\t[" + textVector[2] + "]");
+		scanner.close();
+	}
+	
+	public static int max(int numberOne, int numberTwo, int numberThree) {
+		int higher;
+		if (numberOne > numberTwo && numberOne > numberTwo) {
+			higher = numberOne;
+		} else if (numberTwo > numberThree) {
+			higher = numberTwo;
+		} else {
+			higher = numberThree;
+		}
+		return higher;
+	}
+	
+	public static void showResult(int value) {
+		System.out.println("Higher Number: " + value);
 	}
 }
