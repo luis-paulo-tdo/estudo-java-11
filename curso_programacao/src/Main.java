@@ -7,26 +7,21 @@ public class Main {
 		
 		Locale.setDefault(Locale.US);
 		Scanner scanner = new Scanner(System.in);
-		char repeat;
-		double temperatureCelsius, temperatureFahrenheit;
+		int mask = 0b00100000;
+		int number;
 		
-		System.out.println("Celsius-Fahrenheit Converter");
-		System.out.println("================================");
+		System.out.println("The 6th bit boolean");
+		System.out.println("===================");
+		System.out.println("Type a number:");
+		System.out.print("> ");
+		number = scanner.nextInt();
 		
-		do {
-			System.out.println("Enter the temperature in Celsius");
-			System.out.print("> ");
-			temperatureCelsius = scanner.nextDouble();
-			
-			temperatureFahrenheit = 9.0 * temperatureCelsius / 5.0 + 32.0;
-			System.out.printf("Equivalent temperature in Fahrenheit: %.1f°F\n", temperatureFahrenheit);
-			
-			System.out.println("Do you want to repeat? (s/n)");
-			System.out.print("> ");
-			repeat = scanner.next().charAt(0);
-		} while (repeat != 'n');
+		if ((number & mask) != 0) {
+			System.out.println("The 6th bit is true!");
+		} else {
+			System.out.println("The 6th bit is false!");
+		}
 		
-		System.out.println("Ending Program!");
 		scanner.close();
 	}
 }
