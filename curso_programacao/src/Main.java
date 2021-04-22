@@ -7,23 +7,26 @@ public class Main {
 		
 		Locale.setDefault(Locale.US);
 		Scanner scanner = new Scanner(System.in);
-		int quantity, sum;
+		char repeat;
+		double temperatureCelsius, temperatureFahrenheit;
 		
-		System.out.println("Sum Calc Application (For)");
-		System.out.println("========================================================");
-		System.out.println("Enter the numbers quantity you want to calculate the sum");
-		System.out.print("> ");
-		quantity = scanner.nextInt();
-		sum = 0;
+		System.out.println("Celsius-Fahrenheit Converter");
+		System.out.println("================================");
 		
-		System.out.println("Enter the sequence of " + quantity + " numbers");
-		for (int index = 0; index < quantity; index++) {
+		do {
+			System.out.println("Enter the temperature in Celsius");
 			System.out.print("> ");
-			int input = scanner.nextInt();
-			sum += input;
-		}
+			temperatureCelsius = scanner.nextDouble();
+			
+			temperatureFahrenheit = 9.0 * temperatureCelsius / 5.0 + 32.0;
+			System.out.printf("Equivalent temperature in Fahrenheit: %.1f°F\n", temperatureFahrenheit);
+			
+			System.out.println("Do you want to repeat? (s/n)");
+			System.out.print("> ");
+			repeat = scanner.next().charAt(0);
+		} while (repeat != 'n');
 		
-		System.out.println("Sum: " + sum);
+		System.out.println("Ending Program!");
 		scanner.close();
 	}
 }
