@@ -14,7 +14,6 @@ public class Program {
 		Product product;
 		String name;
 		double price;
-		int quantity;
 		
 		System.out.println("Stock Product Management");
 		System.out.println("=====================================================");
