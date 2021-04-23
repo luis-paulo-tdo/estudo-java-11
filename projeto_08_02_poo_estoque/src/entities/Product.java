@@ -19,9 +19,9 @@ public class Product {
 	}
 	
 	public String toString() {
-		return "Product Data: TV"
+		return name
 				+ ", $" + String.format("%.2f", price)
 				+ ", " + quantity + " units"
-				+ ", Total: $" + String.format("%.2f", this.totalValueInStock());
+				+ ", Total: $" + String.format("%.2f", totalValueInStock());
 	}
 }

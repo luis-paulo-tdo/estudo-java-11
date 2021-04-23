@@ -14,7 +14,7 @@ public class Program {
 		Product product = new Product();
 		
 		System.out.println("Stock Product Management");
-		System.out.println("========================");
+		System.out.println("=====================================================");
 		System.out.println("Enter product data");
 		
 		System.out.print("Name: ");
@@ -26,7 +26,19 @@ public class Program {
 		System.out.print("Quantity In Stock: ");
 		product.quantity = scanner.nextInt();
 		
-		System.out.println(product);
+		System.out.println("Product Data: " + product);
+		System.out.println();
+		
+		System.out.print("Enter the number of products to be added in stock: ");
+		product.addProducts(scanner.nextInt());
+		
+		System.out.println("Updated Data: " + product);
+		System.out.println();
+		
+		System.out.print("Enter the number of products to be removed from stock: ");
+		product.removeProducts(scanner.nextInt());
+		
+		System.out.println("Updated Data: " + product);
 		
 		scanner.close();
 	}
