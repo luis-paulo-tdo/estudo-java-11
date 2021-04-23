@@ -17,4 +17,11 @@ public class Product {
 	public void removeProducts(int quantity) {
 		this.quantity -= quantity;
 	}
+	
+	public String toString() {
+		return "Product Data: TV"
+				+ ", $" + String.format("%.2f", price)
+				+ ", " + quantity + " units"
+				+ ", Total: $" + String.format("%.2f", this.totalValueInStock());
+	}
 }

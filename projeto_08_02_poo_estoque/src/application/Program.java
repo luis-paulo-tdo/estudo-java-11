@@ -17,14 +17,16 @@ public class Program {
 		System.out.println("========================");
 		System.out.println("Enter product data");
 		
-		System.out.print("Name:");
+		System.out.print("Name: ");
 		product.name = scanner.next();
 		
-		System.out.print("Price:");
+		System.out.print("Price: ");
 		product.price = scanner.nextDouble();
 		
-		System.out.print("Quantity In Stock:");
+		System.out.print("Quantity In Stock: ");
 		product.quantity = scanner.nextInt();
+		
+		System.out.println(product);
 		
 		scanner.close();
 	}
