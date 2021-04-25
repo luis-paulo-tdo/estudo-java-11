@@ -3,12 +3,38 @@ package application;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.Instant;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
 
 public class Program {
 
 	public static void main(String[] args) throws ParseException {
+		
+		Calendar calendar = Calendar.getInstance();
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyy HH:mm:ss");
+		Date date = Date.from(Instant.parse("2021-04-25T09:24:10Z"));
+		int month, minutes;
+		
+		calendar.setTime(date);
+		System.out.println("Sample Date: " + simpleDateFormat.format(date));
+		System.out.println();
+		
+		calendar.add(Calendar.HOUR_OF_DAY, 4);
+		date = calendar.getTime();
+		System.out.println("Added 4 hours...");
+		System.out.println("Result: " + simpleDateFormat.format(date));
+		System.out.println();
+
+		month = 1 + calendar.get(Calendar.MONTH);
+		minutes = calendar.get(Calendar.MINUTE);
+
+		System.out.println("Month: " + month);
+		System.out.println("Minutes: " + minutes);
+		System.out.println();
+	}
+	
+	private static void useDate() throws ParseException {
 		
 		SimpleDateFormat simpleDateFormatOne = new SimpleDateFormat("dd/MM/yyy");
 		SimpleDateFormat simpleDateFormatTwo = new SimpleDateFormat("dd/MM/yyy HH:mm:ss");
@@ -58,5 +84,4 @@ public class Program {
 		System.out.println("Hour Five:\t\t" + hourFive);
 		System.out.println("Hour Five:\t\t" + iso8601Date);
 	}
-
 }
