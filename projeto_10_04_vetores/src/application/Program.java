@@ -10,7 +10,18 @@ public class Program {
 	public static void main(String[] args) {
 		
 		Locale.setDefault(Locale.US);
-		priceAverage();
+		nameList();
+	}
+	
+	public static void nameList() {
+		
+		System.out.println("Name List");
+		System.out.println("=========");
+		
+		String[] names = new String[] { "Mary", "John", "Eddie" };
+		for (String name : names) {
+			System.out.println("- " + name);
+		}
 	}
 	
 	public static void priceAverage() {
@@ -45,13 +56,14 @@ public class Program {
 		}
 		
 		sum = 0.0;
-		for (int index = 0; index < products.length; ++index) {
-			sum += products[index].getPrice();
+		for (Product product : products) {
+			sum += product.getPrice();
 		}
 		
 		average = sum / products.length;
 		System.out.println();
 		System.out.printf("Average Height: %.2f", average);
+		scanner.close();
 	}
 	
 	public static void heightAverage() {
