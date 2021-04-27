@@ -63,11 +63,11 @@ public class Worker {
 		return contracts;
 	}
 	
-	void addContract(HourContract contract) {
+	public void addContract(HourContract contract) {
 		contracts.add(contract);
 	}
 	
-	void removeContract(HourContract contract) {
+	public void removeContract(HourContract contract) {
 		contracts.remove(contract);
 	}
 	
