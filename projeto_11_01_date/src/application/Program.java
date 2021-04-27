@@ -32,6 +32,8 @@ public class Program {
 		System.out.println("Month: " + month);
 		System.out.println("Minutes: " + minutes);
 		System.out.println();
+		
+		useDate();
 	}
 	
 	private static void useDate() throws ParseException {
