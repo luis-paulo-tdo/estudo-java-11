@@ -26,4 +26,13 @@ public class BusinessAccount extends Account {
 			balance += amount - 10.0;
 		}
 	}
+	
+	public String toString() {
+		StringBuilder stringBuilder = new StringBuilder();
+		stringBuilder.append("Number: " + number + "\n");
+		stringBuilder.append("Holder: " + holder + "\n");
+		stringBuilder.append("Balance: $" + String.format("%.2f", balance) + "\n");
+		stringBuilder.append("Loan Limit: $" + String.format("%.2f", loanLimit));
+		return stringBuilder.toString();
+	}
 }

@@ -2,8 +2,8 @@ package entities;
 
 public class Account {
 	
-	private Integer number;
-	private String holder;
+	protected Integer number;
+	protected String holder;
 	protected Double balance;
 	
 	public Account() {
@@ -42,5 +42,13 @@ public class Account {
 	
 	public void withdraw(double amount) {
 		balance -= amount;
+	}
+	
+	public String toString() {
+		StringBuilder stringBuilder = new StringBuilder();
+		stringBuilder.append("Number: " + number + "\n");
+		stringBuilder.append("Holder: " + holder + "\n");
+		stringBuilder.append("Balance: $" + String.format("%.2f", balance));
+		return stringBuilder.toString();
 	}
 }
