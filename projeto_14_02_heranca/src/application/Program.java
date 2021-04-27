@@ -9,6 +9,8 @@ public class Program {
 	public static void main(String[] args) {
 		upcasting();
 		downcasting();
+		withdrawFromSavingsAccount();
+		withdrawFromBusinessAccount();
 	}
 	
 	public static void upcasting() {
@@ -29,7 +31,6 @@ public class Program {
 		System.out.println();
 		
 		System.out.println("Upcasting Business Account #1 to Account #2");
-		System.out.println("Account #2");
 		System.out.println(accountTwo);
 		System.out.println();
 		
@@ -102,5 +103,54 @@ public class Program {
 			System.out.println(savingsAccountOne);
 			System.out.println();
 		}
+	}
+	
+	public static void withdrawFromSavingsAccount() {
+		
+		Account accountSeven = new Account(1007, "Paul", 1000.0);
+		Account accountEight = new SavingsAccount(1008, "George", 1000.0, 0.01);
+		double withdrawOne = 200.0;
+		
+		System.out.println("Account #3");
+		System.out.println(accountSeven);
+		System.out.println();
+		
+		accountSeven.withdraw(withdrawOne);
+		System.out.println("Withdrawing $" + withdrawOne + " from Account #3");
+		System.out.println(accountSeven);
+		System.out.println();
+		
+		System.out.println("Savings Account #3 is an Account");
+		System.out.println(accountEight);
+		System.out.println();
+		
+		accountEight.withdraw(withdrawOne);
+		System.out.println("Withdrawing $" + withdrawOne + " from Savings Account #3");
+		System.out.println(accountEight);
+		System.out.println();
+	}
+	
+	public static void withdrawFromBusinessAccount() {
+		Account accountNine = new Account(1009, "Ringo", 1000.0);
+		Account accountTen = new BusinessAccount(1010, "Mick", 1000.0, 2000.0);
+		double withdrawOne = 200.0;
+		
+		System.out.println("Account #4");
+		System.out.println(accountNine);
+		System.out.println();
+		
+		accountNine.withdraw(withdrawOne);
+		System.out.println("Withdrawing $" + withdrawOne + " from Account #4");
+		System.out.println(accountNine);
+		System.out.println();
+		
+		System.out.println("Business Account #5 is an Account");
+		System.out.println(accountTen);
+		System.out.println();
+		
+		accountTen.withdraw(withdrawOne);
+		System.out.println("Withdrawing $" + withdrawOne + " from Business Account #5");
+		System.out.println(accountTen);
+		System.out.println();
 	}
 }

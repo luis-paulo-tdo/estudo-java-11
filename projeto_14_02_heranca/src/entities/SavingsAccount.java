@@ -21,11 +21,15 @@ public class SavingsAccount extends Account {
 		balance += balance * interestRate;
 	}
 	
+	@Override
+	public void withdraw(double amount) {
+		balance -= amount;
+	}
+	
+	@Override
 	public String toString() {
 		StringBuilder stringBuilder = new StringBuilder();
-		stringBuilder.append("Number: " + number + "\n");
-		stringBuilder.append("Holder: " + holder + "\n");
-		stringBuilder.append("Balance: $" + String.format("%.2f", balance) + "\n");
+		stringBuilder.append(super.toString() + "\n");
 		stringBuilder.append("Interest Rate: " + String.format("%.2f", interestRate) + "%");
 		return stringBuilder.toString();
 	}
