@@ -13,7 +13,7 @@ public class Program {
 	public static void main(String[] args) {
 		
 		Scanner scanner = new Scanner(System.in);
-		ChessMatch chessMatch = new ChessMatch();
+		ChessMatch match = new ChessMatch();
 		
 		System.out.println("Welcome To The Chess Match!");
 		System.out.println();
@@ -21,20 +21,20 @@ public class Program {
 		while (true) {
 			try {
 				UserInterface.clearScreen();
-				UserInterface.printBoard(chessMatch.getPieces());
+				UserInterface.printMatch(match);
 				
 				System.out.println();
 				System.out.print("Source: ");
 				ChessPosition source = UserInterface.readChessPosition(scanner);
-				boolean[][] possibleMoves = chessMatch.possibleMoves(source);
+				boolean[][] possibleMoves = match.possibleMoves(source);
 				
 				UserInterface.clearScreen();
-				UserInterface.printBoard(chessMatch.getPieces(), possibleMoves);
+				UserInterface.printBoard(match.getPieces(), possibleMoves);
 				
 				System.out.println();
 				System.out.print("Target: ");
 				ChessPosition target = UserInterface.readChessPosition(scanner);
-				ChessPiece capturedPiece = chessMatch.performChessMove(source, target);
+				ChessPiece capturedPiece = match.performChessMove(source, target);
 				
 			} catch (ChessException exception) {
 				System.out.println(exception.getMessage());
