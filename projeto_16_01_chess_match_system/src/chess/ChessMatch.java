@@ -1,5 +1,8 @@
 package chess;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import boardgame.Board;
 import boardgame.Piece;
 import boardgame.Position;
@@ -11,6 +14,9 @@ public class ChessMatch {
 	private Board board;
 	private Color currentPlayer;
 	private int turn;
+	
+	private List<Piece> boardPieces = new ArrayList<>();
+	private List<Piece> capturedPieces = new ArrayList<>();
 	
 	public ChessMatch() {
 		board = new Board(8, 8);
@@ -58,12 +64,24 @@ public class ChessMatch {
 	
 	private void placeNewPiece(char column, int row, ChessPiece piece) {
 		board.placePiece(piece, new ChessPosition(column, row).toPosition());
+		boardPieces.add(piece);
 	}
 	
 	private void initialSetup() {
-		placeNewPiece('a', 8, new Rook(board, Color.WHITE));
-		placeNewPiece('e', 8, new King(board, Color.WHITE));
-		placeNewPiece('e', 1, new King(board, Color.BLACK));
+		placeNewPiece('c', 1, new Rook(board, Color.WHITE));
+		placeNewPiece('d', 1, new King(board, Color.WHITE));
+		placeNewPiece('e', 1, new Rook(board, Color.WHITE));
+		placeNewPiece('c', 2, new Rook(board, Color.WHITE));
+		placeNewPiece('d', 2, new Rook(board, Color.WHITE));
+		placeNewPiece('e', 2, new Rook(board, Color.WHITE));
+		
+		
+		placeNewPiece('c', 7, new Rook(board, Color.BLACK));
+		placeNewPiece('d', 7, new Rook(board, Color.BLACK));
+		placeNewPiece('e', 7, new Rook(board, Color.BLACK));
+		placeNewPiece('c', 8, new Rook(board, Color.BLACK));
+		placeNewPiece('d', 8, new King(board, Color.BLACK));
+		placeNewPiece('e', 8, new Rook(board, Color.BLACK));
 	}
 	
 	private void nextTurn() {
@@ -95,6 +113,12 @@ public class ChessMatch {
 		Piece movedPiece = board.removePiece(source);
 		Piece capturedPiece = board.removePiece(target);
 		board.placePiece(movedPiece, target);
+		
+		if (capturedPiece != null) {
+			boardPieces.remove(capturedPiece);
+			capturedPieces.add(capturedPiece);
+		}
+		
 		return capturedPiece;
 	}
 }
