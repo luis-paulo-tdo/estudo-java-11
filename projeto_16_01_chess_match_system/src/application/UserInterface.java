@@ -64,6 +64,12 @@ public class UserInterface {
 		System.out.println();
 		System.out.println("Turn: " + match.getTurn());
 		System.out.println("Waiting Player: " + match.getCurrentPlayer());
+		
+		if (match.getCheck()) {
+			System.out.print(ANSI_RED);
+			System.out.println("Check!");
+			System.out.print(ANSI_RESET);
+		}
 	}
 	
 	public static void printBoard(ChessPiece[][] pieces, boolean[][] possibleMoves) {

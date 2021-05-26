@@ -35,6 +35,10 @@ public class ChessMatch {
 		return currentPlayer;
 	}
 	
+	public boolean getCheck() {
+		return check;
+	}
+	
 	public ChessPiece[][] getPieces() {
 		ChessPiece[][] chessPieces = new ChessPiece[board.getRows()][board.getColumns()];
 		for (int row = 0; row < board.getRows(); ++row) {
@@ -60,6 +64,12 @@ public class ChessMatch {
 		validateTargetPosition(source, target);
 		capturedPiece = makeMove(source, target);
 		
+		if (testCheck(currentPlayer)) {
+			undoMove(source, target, capturedPiece);
+			throw new ChessException("Perform Move Error: You can't put yourself in check!");
+		}
+		check = testCheck(opponent(currentPlayer));
+				
 		nextTurn();
 		return (ChessPiece) capturedPiece;
 	}
@@ -147,5 +157,18 @@ public class ChessMatch {
 			}
 		}
 		throw new IllegalStateException("Illegal State Error: There is no " + color.toString().toLowerCase() + " king on the board.");
+	}
+	
+	private boolean testCheck(Color color) {
+		List<Piece> opponentPieces = boardPieces.stream().filter(piece -> ((ChessPiece) piece).getColor() == opponent(color)).collect(Collectors.toList());
+		Position kingPosition = king(color).getChessPosition().toPosition();
+		
+		for (Piece piece : opponentPieces) {
+			boolean[][] possibleMoves = piece.possibleMoves();
+			if (possibleMoves[kingPosition.getRow()][kingPosition.getColumn()]) {
+				return true;
+			}
+		}
+		return false;
 	}
 }
