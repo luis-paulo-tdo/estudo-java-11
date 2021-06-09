@@ -21,7 +21,7 @@ public class Program {
 		System.out.println("Welcome To The Chess Match!");
 		System.out.println();
 		
-		while (true) {
+		while (!match.getCheckMate()) {
 			try {
 				UserInterface.clearScreen();
 				UserInterface.printMatch(match, capturedPieces);
@@ -51,6 +51,9 @@ public class Program {
 				scanner.nextLine();
 			}
 		}
+		
+		UserInterface.clearScreen();
+		UserInterface.printMatch(match, capturedPieces);
 	}
 
 }

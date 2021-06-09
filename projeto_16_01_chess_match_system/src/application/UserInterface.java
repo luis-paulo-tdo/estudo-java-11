@@ -63,13 +63,23 @@ public class UserInterface {
 		printCapturedPieces(capturedPieces);
 		System.out.println();
 		System.out.println("Turn: " + match.getTurn());
-		System.out.println("Waiting Player: " + match.getCurrentPlayer());
 		
-		if (match.getCheck()) {
-			System.out.print(ANSI_RED);
-			System.out.println("Check!");
+		if (!match.getCheckMate()) {
+			System.out.println("Waiting Player: " + match.getCurrentPlayer());
+			if (match.getCheck()) {
+				System.out.print(ANSI_RED);
+				System.out.println("Check!");
+				System.out.print(ANSI_RESET);
+			}
+		} else {
+			System.out.println(ANSI_RED);
+			System.out.print("CHECKMATE!");
 			System.out.print(ANSI_RESET);
+			System.out.println(ANSI_GREEN);
+			System.out.print("Winner: " + match.getCurrentPlayer());
+			System.out.println(ANSI_RESET);
 		}
+		
 	}
 	
 	public static void printBoard(ChessPiece[][] pieces, boolean[][] possibleMoves) {
